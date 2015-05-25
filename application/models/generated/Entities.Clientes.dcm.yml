@@ -1,0 +1,33 @@
+Entities\Clientes:
+    type: entity
+    table: clientes
+    id:
+        id:
+            type: bigint
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nome:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+        telefone:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+        endereco:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+        email:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+    lifecycleCallbacks: {  }
