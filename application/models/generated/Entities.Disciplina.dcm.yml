@@ -1,0 +1,20 @@
+Entities\Disciplina:
+    type: entity
+    table: disciplina
+    id:
+        codigo:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: 'chave primaria da tabela disciplina'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        nome:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: 'Nome da disciplina'
+    lifecycleCallbacks: {  }

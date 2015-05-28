@@ -1,0 +1,39 @@
+Entities\Alunoturma:
+    type: entity
+    table: alunoturma
+    indexes:
+        IDX_4C438EF0341A200D:
+            columns:
+                - codigo_aluno
+        IDX_4C438EF078D148AB:
+            columns:
+                - codigo_turma
+    id:
+        codigo:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: 'chave primaria da tabela alunoturma'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    manyToOne:
+        codigoAluno:
+            targetEntity: Entities\Pessoa
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codigo_aluno:
+                    referencedColumnName: codigo
+            orphanRemoval: false
+        codigoTurma:
+            targetEntity: Entities\Turma
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codigo_turma:
+                    referencedColumnName: codigo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

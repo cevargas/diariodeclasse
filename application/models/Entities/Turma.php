@@ -1,0 +1,191 @@
+<?php
+
+namespace Entities;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Turma
+ *
+ * @ORM\Table(name="turma", indexes={@ORM\Index(name="IDX_2B0219A6E7AB03AE", columns={"codigo_disciplina"}), @ORM\Index(name="IDX_2B0219A6BE6EDD2B", columns={"codigo_professor"})})
+ * @ORM\Entity
+ */
+class Turma
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="codigo", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="turma_codigo_seq", allocationSize=1, initialValue=1)
+     */
+    private $codigo;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datainicio", type="datetime", nullable=true)
+     */
+    private $datainicio;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datafim", type="datetime", nullable=true)
+     */
+    private $datafim;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantidadeaulas", type="bigint", nullable=true)
+     */
+    private $quantidadeaulas;
+
+    /**
+     * @var \Entities\Disciplina
+     *
+     * @ORM\ManyToOne(targetEntity="Entities\Disciplina")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="codigo_disciplina", referencedColumnName="codigo")
+     * })
+     */
+    private $codigoDisciplina;
+
+    /**
+     * @var \Entities\Pessoa
+     *
+     * @ORM\ManyToOne(targetEntity="Entities\Pessoa")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="codigo_professor", referencedColumnName="codigo")
+     * })
+     */
+    private $codigoProfessor;
+
+
+    /**
+     * Get codigo
+     *
+     * @return integer 
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * Set datainicio
+     *
+     * @param \DateTime $datainicio
+     * @return Turma
+     */
+    public function setDatainicio($datainicio)
+    {
+        $this->datainicio = $datainicio;
+
+        return $this;
+    }
+
+    /**
+     * Get datainicio
+     *
+     * @return \DateTime 
+     */
+    public function getDatainicio()
+    {
+        return $this->datainicio;
+    }
+
+    /**
+     * Set datafim
+     *
+     * @param \DateTime $datafim
+     * @return Turma
+     */
+    public function setDatafim($datafim)
+    {
+        $this->datafim = $datafim;
+
+        return $this;
+    }
+
+    /**
+     * Get datafim
+     *
+     * @return \DateTime 
+     */
+    public function getDatafim()
+    {
+        return $this->datafim;
+    }
+
+    /**
+     * Set quantidadeaulas
+     *
+     * @param integer $quantidadeaulas
+     * @return Turma
+     */
+    public function setQuantidadeaulas($quantidadeaulas)
+    {
+        $this->quantidadeaulas = $quantidadeaulas;
+
+        return $this;
+    }
+
+    /**
+     * Get quantidadeaulas
+     *
+     * @return integer 
+     */
+    public function getQuantidadeaulas()
+    {
+        return $this->quantidadeaulas;
+    }
+
+    /**
+     * Set codigoDisciplina
+     *
+     * @param \Entities\Disciplina $codigoDisciplina
+     * @return Turma
+     */
+    public function setCodigoDisciplina(\Entities\Disciplina $codigoDisciplina = null)
+    {
+        $this->codigoDisciplina = $codigoDisciplina;
+
+        return $this;
+    }
+
+    /**
+     * Get codigoDisciplina
+     *
+     * @return \Entities\Disciplina 
+     */
+    public function getCodigoDisciplina()
+    {
+        return $this->codigoDisciplina;
+    }
+
+    /**
+     * Set codigoProfessor
+     *
+     * @param \Entities\Pessoa $codigoProfessor
+     * @return Turma
+     */
+    public function setCodigoProfessor(\Entities\Pessoa $codigoProfessor = null)
+    {
+        $this->codigoProfessor = $codigoProfessor;
+
+        return $this;
+    }
+
+    /**
+     * Get codigoProfessor
+     *
+     * @return \Entities\Pessoa 
+     */
+    public function getCodigoProfessor()
+    {
+        return $this->codigoProfessor;
+    }
+}

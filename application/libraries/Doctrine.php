@@ -51,12 +51,16 @@ class Doctrine {
     $config->setProxyNamespace('Proxies');
 
     // Set up logger
-    $logger = new EchoSQLLogger;
-    $config->setSQLLogger($logger);
+    //$logger = new EchoSQLLogger;
+    //$config->setSQLLogger($logger);
 
     $config->setAutoGenerateProxyClasses( TRUE );
 
     // Database connection information
+      
+    if($db['default']['dbdriver'] == 'postgre') 
+        $db['default']['dbdriver'] = 'pgsql';
+      
     $connectionOptions = array(
         'driver'    => 'pdo_'.$db['default']['dbdriver'],
         'user'      => $db['default']['username'],
@@ -64,8 +68,9 @@ class Doctrine {
         'host'      => $db['default']['hostname'],
         'dbname'    => $db['default']['database']
     );
-
+      
     // Create EntityManager
     $this->em = EntityManager::create($connectionOptions, $config);
+      
   }
 }

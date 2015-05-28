@@ -1,0 +1,39 @@
+Entities\Frequencia:
+    type: entity
+    table: frequencia
+    indexes:
+        IDX_26ED9274341A200D:
+            columns:
+                - codigo_aluno
+    id:
+        codigo:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: 'chave primaria da tabela alunoturma'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        aula:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: 'numero que representa a aula da disciplina'
+        presenca:
+            type: string
+            nullable: true
+            length: 1
+            fixed: true
+            comment: 'P : aluno presente - F : aluno faltou - J : falta justificada'
+    manyToOne:
+        codigoAluno:
+            targetEntity: Entities\Pessoa
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codigo_aluno:
+                    referencedColumnName: codigo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

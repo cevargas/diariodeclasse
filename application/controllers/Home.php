@@ -8,9 +8,11 @@ class Home extends CI_Controller {
        
         $em = $this->doctrine->em;
         
-        $clients = $em->getRepository('Entities\Clientes')->findAll();        
-        var_dump($clients);
+        $data = array();
         
-		$this->load->view('home/index');
+        $disciplinas = $em->getRepository('Entities\Disciplina')->findAll();        
+        $data['lista_disciplinas'] = $disciplinas;
+        
+		$this->load->view('home/index', $data);
 	}
 }

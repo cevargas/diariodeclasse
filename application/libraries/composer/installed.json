@@ -1,57 +1,5 @@
 [
     {
-        "name": "symfony/process",
-        "version": "v2.6.7",
-        "version_normalized": "2.6.7.0",
-        "target-dir": "Symfony/Component/Process",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Process.git",
-            "reference": "9f3c4baaf840ed849e1b1f7bfd5ae246e8509562"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Process/zipball/9f3c4baaf840ed849e1b1f7bfd5ae246e8509562",
-            "reference": "9f3c4baaf840ed849e1b1f7bfd5ae246e8509562",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7"
-        },
-        "time": "2015-05-02 15:18:45",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Process\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Process Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "kriswallsmith/assetic",
         "version": "v1.2.1",
         "version_normalized": "1.2.1.0",
@@ -126,52 +74,6 @@
             "compression",
             "minification"
         ]
-    },
-    {
-        "name": "robloach/component-installer",
-        "version": "0.0.12",
-        "version_normalized": "0.0.12.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/RobLoach/component-installer.git",
-            "reference": "1864f25db21fc173e02a359f646acd596c1b0460"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/1864f25db21fc173e02a359f646acd596c1b0460",
-            "reference": "1864f25db21fc173e02a359f646acd596c1b0460",
-            "shasum": ""
-        },
-        "require": {
-            "kriswallsmith/assetic": "1.*",
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "composer/composer": "1.*"
-        },
-        "time": "2013-08-31 23:46:48",
-        "type": "composer-installer",
-        "extra": {
-            "class": "ComponentInstaller\\Installer"
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "ComponentInstaller": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Rob Loach",
-                "email": "robloach@gmail.com",
-                "homepage": "http://robloach.net"
-            }
-        ],
-        "description": "Allows installation of Components via Composer."
     },
     {
         "name": "components/jquery",
@@ -701,66 +603,6 @@
         ]
     },
     {
-        "name": "symfony/console",
-        "version": "v2.6.7",
-        "version_normalized": "2.6.7.0",
-        "target-dir": "Symfony/Component/Console",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Console.git",
-            "reference": "ebc5679854aa24ed7d65062e9e3ab0b18a917272"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Console/zipball/ebc5679854aa24ed7d65062e9e3ab0b18a917272",
-            "reference": "ebc5679854aa24ed7d65062e9e3ab0b18a917272",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/event-dispatcher": "~2.1",
-            "symfony/phpunit-bridge": "~2.7",
-            "symfony/process": "~2.1"
-        },
-        "suggest": {
-            "psr/log": "For using the console logger",
-            "symfony/event-dispatcher": "",
-            "symfony/process": ""
-        },
-        "time": "2015-05-02 15:18:45",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Console\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Console Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "doctrine/dbal",
         "version": "v2.5.1",
         "version_normalized": "2.5.1.0",
@@ -910,8 +752,8 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v2.6.7",
-        "version_normalized": "2.6.7.0",
+        "version": "v2.6.8",
+        "version_normalized": "2.6.8.0",
         "target-dir": "Symfony/Component/Yaml",
         "source": {
             "type": "git",
@@ -958,6 +800,168 @@
             }
         ],
         "description": "Symfony Yaml Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "symfony/process",
+        "version": "v2.6.8",
+        "version_normalized": "2.6.8.0",
+        "target-dir": "Symfony/Component/Process",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Process.git",
+            "reference": "7856d78ab6cce6e59d02d9e1a873441f6bd21306"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Process/zipball/7856d78ab6cce6e59d02d9e1a873441f6bd21306",
+            "reference": "7856d78ab6cce6e59d02d9e1a873441f6bd21306",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "time": "2015-05-15 13:32:45",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Process\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Process Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "robloach/component-installer",
+        "version": "0.1.0",
+        "version_normalized": "0.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/RobLoach/component-installer.git",
+            "reference": "319597e78604a86379af0359944290d226b0d416"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/319597e78604a86379af0359944290d226b0d416",
+            "reference": "319597e78604a86379af0359944290d226b0d416",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "1.0.0",
+            "kriswallsmith/assetic": "1.*",
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "composer/composer": "1.*@alpha",
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2015-05-26 14:53:36",
+        "type": "composer-plugin",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            },
+            "class": "ComponentInstaller\\ComponentInstallerPlugin"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ComponentInstaller": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rob Loach",
+                "homepage": "http://robloach.net"
+            }
+        ],
+        "description": "Allows installation of Components via Composer."
+    },
+    {
+        "name": "symfony/console",
+        "version": "v2.6.8",
+        "version_normalized": "2.6.8.0",
+        "target-dir": "Symfony/Component/Console",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Console.git",
+            "reference": "2343f6d8026306bd330e0c987e4c102483c213e7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Console/zipball/2343f6d8026306bd330e0c987e4c102483c213e7",
+            "reference": "2343f6d8026306bd330e0c987e4c102483c213e7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/event-dispatcher": "~2.1",
+            "symfony/phpunit-bridge": "~2.7",
+            "symfony/process": "~2.1"
+        },
+        "suggest": {
+            "psr/log": "For using the console logger",
+            "symfony/event-dispatcher": "",
+            "symfony/process": ""
+        },
+        "time": "2015-05-22 14:53:08",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Console\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Console Component",
         "homepage": "https://symfony.com"
     }
 ]

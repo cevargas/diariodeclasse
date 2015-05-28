@@ -1,0 +1,53 @@
+Entities\Turma:
+    type: entity
+    table: turma
+    indexes:
+        IDX_2B0219A6E7AB03AE:
+            columns:
+                - codigo_disciplina
+        IDX_2B0219A6BE6EDD2B:
+            columns:
+                - codigo_professor
+    id:
+        codigo:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: 'chave primaria da tabela turma'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        datainicio:
+            type: datetime
+            nullable: true
+            comment: 'data inicio da disciplina'
+        datafim:
+            type: datetime
+            nullable: true
+            comment: 'data fim da disciplina'
+        quantidadeaulas:
+            type: bigint
+            nullable: true
+            unsigned: false
+            comment: 'quantidade de aulas que será realizado para a disciplina'
+    manyToOne:
+        codigoDisciplina:
+            targetEntity: Entities\Disciplina
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codigo_disciplina:
+                    referencedColumnName: codigo
+            orphanRemoval: false
+        codigoProfessor:
+            targetEntity: Entities\Pessoa
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codigo_professor:
+                    referencedColumnName: codigo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
