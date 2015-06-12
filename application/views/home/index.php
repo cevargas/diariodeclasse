@@ -12,11 +12,13 @@
             Doctrine ORM
         </title>
         
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-        <link href="components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="components/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-        <link href="components/assets/css/custom.css" rel="stylesheet">
-        
+		<?php // add css files
+			$this->minify->css(array('bootstrap/css/bootstrap.min.css', 
+									 'bootstrap/css/bootstrap-theme.min.css', 
+									 'assets/css/custom.css',
+									 'assets/css/fonts.css'));
+			echo $this->minify->deploy_css(true);
+		?>        
     </head>     
     
     <body>

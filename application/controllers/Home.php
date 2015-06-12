@@ -5,14 +5,19 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-       
-        $em = $this->doctrine->em;
+		$data = array();        
+		
+        /* Examplo de uso, precisa configurar o banco de dados
+		*  Configuracao do doctrine em application/libraries/Doctrine.php
+			*/
         
-        $data = array();
-        
+		$em = $this->doctrine->em;
         $disciplinas = $em->getRepository('Entities\Disciplina')->findAll();        
         $data['lista_disciplinas'] = $disciplinas;
         
+        var_dump($data);
+        
+		
 		$this->load->view('home/index', $data);
 	}
 }

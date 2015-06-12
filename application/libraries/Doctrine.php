@@ -55,14 +55,20 @@ class Doctrine {
     //$config->setSQLLogger($logger);
 
     $config->setAutoGenerateProxyClasses( TRUE );
+	
+	if (strpos($db['default']['dbdriver'], 'pdo') === false) {
+		$pdo = 'pdo_';
+	}
 
-    // Database connection information
-      
-    if($db['default']['dbdriver'] == 'postgre') 
+	if($db['default']['dbdriver'] == 'mysqli') 
+		$pdo = '';   
+	
+	if($db['default']['dbdriver'] == 'postgre') 
         $db['default']['dbdriver'] = 'pgsql';
-      
+		
+    // Database connection information      	
     $connectionOptions = array(
-        'driver'    => 'pdo_'.$db['default']['dbdriver'],
+        'driver'    => $pdo.$db['default']['dbdriver'],
         'user'      => $db['default']['username'],
         'password'  => $db['default']['password'],
         'host'      => $db['default']['hostname'],
