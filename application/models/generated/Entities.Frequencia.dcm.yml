@@ -5,6 +5,9 @@ Entities\Frequencia:
         IDX_26ED9274341A200D:
             columns:
                 - codigo_aluno
+        IDX_26ED927478D148AB:
+            columns:
+                - codigo_turma
     id:
         codigo:
             type: bigint
@@ -34,6 +37,15 @@ Entities\Frequencia:
             inversedBy: null
             joinColumns:
                 codigo_aluno:
+                    referencedColumnName: codigo
+            orphanRemoval: false
+        codigoTurma:
+            targetEntity: Entities\Turma
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                codigo_turma:
                     referencedColumnName: codigo
             orphanRemoval: false
     lifecycleCallbacks: {  }

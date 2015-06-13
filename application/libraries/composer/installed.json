@@ -963,5 +963,44 @@
         ],
         "description": "Symfony Console Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "components/font-awesome",
+        "version": "4.3.0",
+        "version_normalized": "4.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/components/font-awesome.git",
+            "reference": "73acf4d65eadd8d127bafc7bd510240ea3979e83"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/components/font-awesome/zipball/73acf4d65eadd8d127bafc7bd510240ea3979e83",
+            "reference": "73acf4d65eadd8d127bafc7bd510240ea3979e83",
+            "shasum": ""
+        },
+        "time": "2015-01-26 11:26:16",
+        "type": "component",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.3.x-dev"
+            },
+            "component": {
+                "styles": [
+                    "css/font-awesome.css"
+                ],
+                "files": [
+                    "css/font-awesome.min.css",
+                    "fonts/*"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT",
+            "OFL-1.1"
+        ],
+        "description": "The iconic font designed for use with Twitter Bootstrap."
     }
 ]

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Frequencia
  *
- * @ORM\Table(name="frequencia", indexes={@ORM\Index(name="IDX_26ED9274341A200D", columns={"codigo_aluno"})})
+ * @ORM\Table(name="frequencia", indexes={@ORM\Index(name="IDX_26ED9274341A200D", columns={"codigo_aluno"}), @ORM\Index(name="IDX_26ED927478D148AB", columns={"codigo_turma"})})
  * @ORM\Entity
  */
 class Frequencia
@@ -46,6 +46,16 @@ class Frequencia
      */
     private $codigoAluno;
 
+    /**
+     * @var \Entities\Turma
+     *
+     * @ORM\ManyToOne(targetEntity="Entities\Turma")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="codigo_turma", referencedColumnName="codigo")
+     * })
+     */
+    private $codigoTurma;
+
 
     /**
      * Get codigo
@@ -66,7 +76,7 @@ class Frequencia
     public function setAula($aula)
     {
         $this->aula = $aula;
-
+    
         return $this;
     }
 
@@ -89,7 +99,7 @@ class Frequencia
     public function setPresenca($presenca)
     {
         $this->presenca = $presenca;
-
+    
         return $this;
     }
 
@@ -112,7 +122,7 @@ class Frequencia
     public function setCodigoAluno(\Entities\Pessoa $codigoAluno = null)
     {
         $this->codigoAluno = $codigoAluno;
-
+    
         return $this;
     }
 
@@ -124,5 +134,28 @@ class Frequencia
     public function getCodigoAluno()
     {
         return $this->codigoAluno;
+    }
+
+    /**
+     * Set codigoTurma
+     *
+     * @param \Entities\Turma $codigoTurma
+     * @return Frequencia
+     */
+    public function setCodigoTurma(\Entities\Turma $codigoTurma = null)
+    {
+        $this->codigoTurma = $codigoTurma;
+    
+        return $this;
+    }
+
+    /**
+     * Get codigoTurma
+     *
+     * @return \Entities\Turma 
+     */
+    public function getCodigoTurma()
+    {
+        return $this->codigoTurma;
     }
 }

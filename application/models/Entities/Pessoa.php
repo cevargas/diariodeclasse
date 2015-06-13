@@ -64,6 +64,13 @@ class Pessoa
      */
     private $tipo;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="senha", type="string", length=255, nullable=false)
+     */
+    private $senha;
+
 
     /**
      * Get codigo
@@ -84,7 +91,7 @@ class Pessoa
     public function setNome($nome)
     {
         $this->nome = $nome;
-
+    
         return $this;
     }
 
@@ -107,7 +114,7 @@ class Pessoa
     public function setDdd($ddd)
     {
         $this->ddd = $ddd;
-
+    
         return $this;
     }
 
@@ -130,7 +137,7 @@ class Pessoa
     public function setTelefone($telefone)
     {
         $this->telefone = $telefone;
-
+    
         return $this;
     }
 
@@ -153,7 +160,7 @@ class Pessoa
     public function setEndereco($endereco)
     {
         $this->endereco = $endereco;
-
+    
         return $this;
     }
 
@@ -176,7 +183,7 @@ class Pessoa
     public function setEmail($email)
     {
         $this->email = $email;
-
+    
         return $this;
     }
 
@@ -199,7 +206,7 @@ class Pessoa
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
-
+    
         return $this;
     }
 
@@ -211,5 +218,28 @@ class Pessoa
     public function getTipo()
     {
         return $this->tipo;
+    }
+
+    /**
+     * Set senha
+     *
+     * @param string $senha
+     * @return Pessoa
+     */
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
+    
+        return $this;
+    }
+
+    /**
+     * Get senha
+     *
+     * @return string 
+     */
+    public function getSenha()
+    {
+        return $this->senha;
     }
 }

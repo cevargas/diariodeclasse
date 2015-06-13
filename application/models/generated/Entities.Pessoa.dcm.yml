@@ -21,7 +21,7 @@ Entities\Pessoa:
             type: string
             nullable: true
             length: 4
-            fixed: true
+            fixed: false
             comment: 'codigo de area do telefone'
         telefone:
             type: string
@@ -47,4 +47,9 @@ Entities\Pessoa:
             length: 1
             fixed: true
             comment: 'Determina a função da pessoa na instituicao. 1:Professor - 2:Estudante'
+        senha:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
     lifecycleCallbacks: {  }
