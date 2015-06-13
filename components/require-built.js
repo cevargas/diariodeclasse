@@ -2036,7 +2036,7 @@ var components = {
             ]
         }
     },
-    "baseUrl": "components"
+    "baseUrl": "http://localhost/diariodeclasse/components"
 };
 if (typeof require !== "undefined" && require.config) {
     require.config(components);

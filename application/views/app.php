@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Carlos Eduardo de Vargas">
+    
+    <link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url()?>components/assets/images/favicon.ico' />
 
     <title>
         Doctrine ORM - Persistência e Armazenamento de Dados
@@ -18,7 +20,8 @@
                                  'bootstrap/css/bootstrap-theme.min.css', 
                                  'assets/css/custom.css', 
                                  'assets/css/fonts.css',
-                                 'require.css'));
+                                 'require.css',
+                                 'toastr/toastr.css'));
         echo $this->minify->deploy_css(true); 
     ?>
 </head>
@@ -69,9 +72,11 @@
 
         </div>
     </div>
-        
+
+    
     <script data-main="bootstrap" src="<?php echo base_url()?>components/require.js"></script>
-    <script src="<?php echo base_url()?>components/assets/scripts.js"></script>
+    <script src="<?php echo base_url()?>components/assets/js/scripts.js"></script>    
+
     
 </body>
 </html>
