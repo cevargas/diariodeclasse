@@ -70,7 +70,8 @@
         </div>
     </div>
         
-    <script data-main="bootstrap" src="components/require.js"></script>
+    <script data-main="bootstrap" src="<?php echo base_url()?>components/require.js"></script>
+    <script src="<?php echo base_url()?>components/assets/scripts.js"></script>
     
 </body>
 </html>

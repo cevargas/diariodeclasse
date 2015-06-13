@@ -1,6 +1,6 @@
 {
   "description" : "Codeigniter e Doctrine ORM",
-  "name" : "Doctrine",
+  "name" : "Persistência e Armazenamento de Dados",
   "config": {
     "vendor-dir": "application/libraries"
   },  

@@ -7,18 +7,14 @@ var components = {
         {
             "name": "jquery",
             "main": "jquery-built.js"
-        },
-        {
-            "name": "assets",
-            "main": "scripts.js"
-        },
+        }
     ],
     "shim": {
         "bootstrap": {
             "deps": [
                 "jquery"
             ]
-        }      
+        }
     },
     "baseUrl": "components"
 };
