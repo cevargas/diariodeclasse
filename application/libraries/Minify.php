@@ -101,7 +101,7 @@ class Minify
 	 *
 	 * @var array
 	 */
-	public $compression_engine = array('css' => 'minify', 'js' => 'closurecompiler');
+	public $compression_engine = array('css' => 'minify', 'js' => 'jsmin');
 
 	/**
 	 * Css file name with path.

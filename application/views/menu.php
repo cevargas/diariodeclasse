@@ -1,6 +1,6 @@
 <ul class="nav nav-pills nav-stacked">
 
-    <li role="presentation" class="<?php if($this->uri->segment(1) == 'home') echo 'active';?>">
+    <li role="presentation" class="<?php if($this->uri->segment(1) == 'home' or !$this->uri->segment(1)) echo 'active';?>">
         <a href="<?php echo base_url();?>home">Home</a>
     </li>
     <li role="presentation" class="<?php if($this->uri->segment(1) == 'disciplinas') echo 'active';?>">

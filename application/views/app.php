@@ -9,19 +9,20 @@
     <meta name="keywords" content="">
     <meta name="author" content="Carlos Eduardo de Vargas">
     
-    <link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url()?>components/assets/images/favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url()?>components/custom/images/favicon.ico' />
 
     <title>
         Doctrine ORM - Persistência e Armazenamento de Dados
     </title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
 
     <?php 
         $this->minify->css(array('bootstrap/css/bootstrap.min.css', 
                                  'custom/css/custom.css', 
-                                 'custom/css/fonts.css',
                                  'toastr/toastr.css',
                                  'font-awesome/css/font-awesome.min.css'));
-        echo $this->minify->deploy_css(true); 
+        echo $this->minify->deploy_css(false); 
     ?>
     
     <?php 
@@ -29,7 +30,7 @@
                                 'bootstrap/js/bootstrap.min.js',
                                 'toastr/toastr.js',
                                 'custom/js/scripts.js'));
-        echo $this->minify->deploy_js(true); 
+        echo $this->minify->deploy_js(false);
     ?>
 </head>
 
