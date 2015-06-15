@@ -54,7 +54,8 @@ class Disciplinas extends CI_Controller {
          
         if ($this->form_validation->run() == FALSE) {
             
-           $this->novo(); 
+            $this->session->set_flashdata('success_msg', NULL);            
+            $this->novo(); 
             
         }
         else {
@@ -74,7 +75,7 @@ class Disciplinas extends CI_Controller {
                 $disciplina = new Entities\Disciplina;
                 $disciplina->setNome($this->input->post('nome'));
                 
-                $message = 'Dados inseridos com sucesso.';
+                $message = 'Dados incluídos com sucesso.';
             }
 
             $this->doctrine->em->persist($disciplina);
@@ -100,5 +101,36 @@ class Disciplinas extends CI_Controller {
         $data['return'] = 'success';
         
         echo json_encode($data);
+    }
+    
+    public function pesquisa(){
+        
+        $data = array();
+        
+        $this->form_validation->set_rules('disciplina', 'Disciplinca', 'required');
+         
+        if ($this->form_validation->run() == FALSE) {
+            
+           $this->session->set_flashdata('error_msg', 'Informe o nome da Disciplina que deseja pesquisar');
+           $this->listar(); 
+            
+        }
+        else {
+            
+            $this->session->set_flashdata('error_msg', NULL);
+            
+            $disciplina_pesquisa = $this->input->post('disciplina');
+            $disciplinas = $this->doctrine->em->getRepository('Entities\Disciplina')
+                ->createQueryBuilder('d')
+                ->where('LOWER(d.nome) LIKE :disciplina')
+                ->setParameter('disciplina', '%'.strtolower($disciplina_pesquisa).'%')
+                ->getQuery()
+                ->getResult();
+ 
+            $data['lista_disciplinas'] = $disciplinas;
+            $data['view'] = 'disciplinas/index';
+
+            $this->load->view('app', $data);   
+        }       
     }
 }

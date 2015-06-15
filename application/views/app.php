@@ -17,12 +17,19 @@
 
     <?php 
         $this->minify->css(array('bootstrap/css/bootstrap.min.css', 
-                                 'bootstrap/css/bootstrap-theme.min.css', 
-                                 'assets/css/custom.css', 
-                                 'assets/css/fonts.css',
-                                 'require.css',
-                                 'toastr/toastr.css'));
+                                 'custom/css/custom.css', 
+                                 'custom/css/fonts.css',
+                                 'toastr/toastr.css',
+                                 'font-awesome/css/font-awesome.min.css'));
         echo $this->minify->deploy_css(true); 
+    ?>
+    
+    <?php 
+        $this->minify->js(array('jquery/jquery-1.11.3.min.js',
+                                'bootstrap/js/bootstrap.min.js',
+                                'toastr/toastr.js',
+                                'custom/js/scripts.js'));
+        echo $this->minify->deploy_js(true); 
     ?>
 </head>
 
@@ -31,52 +38,40 @@
     <div class="container-fluid">
         <div class="row">
 
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default navbar-static-top">
                 <div class="container-fluid">
-
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
                         <a class="navbar-brand" href="#">Diário de Classe</a>
-                    </div>
-
-                    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-                        <ul class="nav navbar-nav">                            
-                            <li class="<?php if($this->uri->segment(1) == 'home') echo 'active';?>">
-                                <a href="<?php echo base_url();?>home">Home</a>
-                            </li>                            
-                            <li class="<?php if($this->uri->segment(1) == 'disciplinas') echo 'active';?>">
-                                <a href="<?php echo base_url();?>disciplinas">Disciplinas</a>
-                            </li>                            
-                            <li class="<?php if($this->uri->segment(1) == 'alunos') echo 'active';?>">
-                                <a href="<?php echo base_url();?>alunos">Alunos</a>
-                            </li>                            
-                            <li class="<?php if($this->uri->segment(1) == 'frequencia') echo 'active';?>">
-                                <a href="<?php echo base_url();?>frequencia">Frequência</a>
-                            </li>                            
-                            <li class="<?php if($this->uri->segment(1) == 'turmas') echo 'active';?>">
-                                <a href="<?php echo base_url();?>turmas">Turmas</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </nav>
 
-            <div class="col-md-12">
+            <div class="col-md-2">
+                <?php $this->load->view('menu.php');?>     
+            </div>
+           
+            <div class="col-md-10">
                 <?php $this->load->view($view);?>     
             </div>
 
         </div>
     </div>
-
     
-    <script data-main="bootstrap" src="<?php echo base_url()?>components/require.js"></script>
-    <script src="<?php echo base_url()?>components/assets/js/scripts.js"></script>    
-
+    <?php if($this->session->flashdata('success_msg')) : ?>
+        <script>
+            $(function () {
+                toastr.success('<?php echo $this->session->flashdata('success_msg');?>', 'Sucesso');
+            });
+        </script>   
+    <?php endif; ?>
+    
+     <?php if($this->session->flashdata('error_msg')) : ?>
+        <script>
+            $(function () {
+                toastr.warning('<?php echo $this->session->flashdata('error_msg');?>', 'Opss..');
+            });
+        </script>   
+    <?php endif; ?>
     
 </body>
 </html>
