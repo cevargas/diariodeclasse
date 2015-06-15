@@ -9,11 +9,11 @@
             <div class="form-group">
                 <label for="nome" class="col-sm-2 control-label">Disciplina</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="nome" placeholder="Disciplina" value="<?php if(isset($disciplina)) : echo $disciplina->getNome(); endif;?>">
+                    <input type="text" class="form-control" name="nome" placeholder="Nome da Disciplina" value="<?php if(isset($disciplina)) : echo $disciplina->getNome(); else: echo set_value('nome'); endif;?>">
                 </div>
             </div>
 
-            <input type="hidden" name="codigo" value="<?php if(isset($disciplina)) : echo $disciplina->getCodigo(); endif; ?>">
+            <input type="hidden" name="codigo" value="<?php if(isset($disciplina)) : echo $disciplina->getCodigo(); else: echo set_value('codigo'); endif; ?>">
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">

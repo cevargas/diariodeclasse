@@ -6,8 +6,8 @@
     <li role="presentation" class="<?php if($this->uri->segment(1) == 'disciplinas') echo 'active';?>">
         <a href="<?php echo base_url();?>disciplinas">Disciplinas</a>
     </li>
-    <li role="presentation" class="<?php if($this->uri->segment(1) == 'alunos') echo 'active';?>">
-        <a href="<?php echo base_url();?>alunos">Alunos</a>
+    <li role="presentation" class="<?php if($this->uri->segment(1) == 'pessoas') echo 'active';?>">
+        <a href="<?php echo base_url();?>pessoas">Pessoas</a>
     </li>
     <li role="presentation" class="<?php if($this->uri->segment(1) == 'frequencia') echo 'active';?>">
         <a href="<?php echo base_url();?>frequencia">Frequência</a>

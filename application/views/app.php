@@ -25,13 +25,11 @@
         echo $this->minify->deploy_css(false); 
     ?>
     
-    <?php 
-        $this->minify->js(array('jquery/jquery-1.11.3.min.js',
-                                'bootstrap/js/bootstrap.min.js',
-                                'toastr/toastr.js',
-                                'custom/js/scripts.js'));
-        echo $this->minify->deploy_js(false);
-    ?>
+    <script type="text/javascript" src="<?php echo base_url()?>components/jquery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>components/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>components/toastr/toastr.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>components/custom/js/scripts.js"></script>
+    
 </head>
 
 <body>

@@ -1,24 +1,24 @@
 <div class="panel panel-default">
     <div class="panel-body">        
         
-        <form id="frm-pesquisa" action="<?php echo base_url()?>disciplinas/pesquisa" method="post" class="form-inline pull-left">
+        <form id="frm-pesquisa" action="<?php echo base_url()?>pessoas/pesquisa" method="post" class="form-inline pull-left">
             <div class="form-group">
                 <input type="text" class="form-control input-sm" 
-                    id="disciplina" 
-                    name="disciplina" 
-                    value="<?php if($this->input->post('disciplina')): 
-                                    echo $this->input->post('disciplina'); 
-                                endif;?>"
-                     placeholder="Disciplina">
+                    id="nome" 
+                    name="nome" 
+                    value="<?php if($this->input->post('nome')): 
+                                    echo $this->input->post('nome'); 
+                                  endif;?>"
+                     placeholder="Pessoa">
             </div>           
             <button type="submit" class="btn btn-sm btn-warning"><i class="fa fa-search"></i> Pesquisar</button>
         </form>        
         
         <div class="btn-group pull-right" role="group">
-            <a class="btn btn-success btn-sm" href="<?php echo base_url()?>disciplinas/novo">
-                <i class="fa fa-plus-circle"></i> Adicionar Disciplina
+            <a class="btn btn-success btn-sm" href="<?php echo base_url()?>pessoas/novo">
+                <i class="fa fa-plus-circle"></i> Adicionar Pessoa
             </a>&nbsp;
-            <a class="btn btn-info btn-sm" href="<?php echo base_url()?>disciplinas/listar">
+            <a class="btn btn-info btn-sm" href="<?php echo base_url()?>pessoas/listar">
                 <i class="fa fa-refresh"></i> Listar Todas
             </a>
         </div>
@@ -30,29 +30,39 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Disciplina</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Tipo</th>
             <th colspan="2"></th>
         </tr>
     </thead>
 
     <tbody>
-        <?php foreach($lista_disciplinas as $key=> $val): ?>
+        <?php foreach($lista_pessoas as $key=> $val): ?>
         <tr id="tr_<?php echo $val->getCodigo();?>">
             <td class="col-md-1">
-                <?php echo $val->getCodigo();?></td>
-            <td class="col-md-9">
-                <?php echo $val->getNome();?></td>
+                <?php echo $val->getCodigo();?>
+            </td>                
+            <td class="col-md-4">
+                <?php echo $val->getNome();?>
+            </td>                
+            <td class="col-md-3">
+                <?php echo $val->getEmail();?>
+            </td>                
+            <td class="col-md-2">
+                <?php echo ($val->getTipo() == 1) ? "Professor" : "Estudante";?>
+            </td>                
             <td class="col-md-1">
-                <a href="<?php echo base_url()?>disciplinas/editar/<?php echo $val->getCodigo();?>" class="btn btn-primary btn-sm">
+                <a href="<?php echo base_url()?>pessoas/editar/<?php echo $val->getCodigo();?>" class="btn btn-primary btn-sm">
                     <i class="fa fa-pencil-square-o"></i> Editar</a>
             </td>
             <td class="col-md-1">
                 <a href="#" type="button" 
-                       data-id="<?php echo $val->getCodigo();?>" 
-                       data-url="<?php echo base_url()?>disciplinas" 
-                       class="btn btn-danger btn-sm"
-                       data-toggle="modal" 
-                       data-target="#confirm-dialog">
+                   data-id="<?php echo $val->getCodigo();?>" 
+                   data-url="<?php echo base_url()?>pessoas" 
+                   class="btn btn-danger btn-sm" 
+                   data-toggle="modal" 
+                   data-target="#confirm-dialog">
                     <i class="fa fa-times"></i> Excluir</a>
             </td>
         </tr>
@@ -69,7 +79,7 @@
                 <h4 class="modal-title">Confirmação</h4>
             </div>
             <div class="modal-body">
-                <p>Deseja mesmo excluir esta Disciplina?</p>
+                <p>Deseja mesmo excluir esta Pessoa?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

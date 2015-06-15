@@ -66,18 +66,20 @@ class Disciplinas extends CI_Controller {
             $message = '';
 
             if($codigo) {
-                $disciplina = $this->doctrine->em->getRepository('Entities\Disciplina')->findOneBy(array('codigo' => $codigo));
-                $disciplina->setNome($nome);
                 
+                $disciplina = $this->doctrine->em->getRepository('Entities\Disciplina')->findOneBy(array('codigo' => $codigo));  
                 $message = 'Dados atualizados com sucesso.';
+                
             }
             else {
-                $disciplina = new Entities\Disciplina;
-                $disciplina->setNome($this->input->post('nome'));
                 
+                $disciplina = new Entities\Disciplina;
                 $message = 'Dados incluídos com sucesso.';
+                
             }
-
+            
+            $disciplina->setNome($nome);
+            
             $this->doctrine->em->persist($disciplina);
             $this->doctrine->em->flush();
             
