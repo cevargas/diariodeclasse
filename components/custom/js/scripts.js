@@ -28,5 +28,10 @@ $(function () {
                 toastr.success('Dados excluidos com sucesso!', 'Sucesso');
             }
         });
+    });    
+    $('#datetimepicker').datetimepicker({ 
+        locale: 'pt-br',
+        format: 'DD/MM/YYYY'
     });
+   
 });

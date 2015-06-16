@@ -21,14 +21,18 @@
         $this->minify->css(array('bootstrap/css/bootstrap.min.css', 
                                  'custom/css/custom.css', 
                                  'toastr/toastr.css',
-                                 'font-awesome/css/font-awesome.min.css'));
-        echo $this->minify->deploy_css(false); 
+                                 'font-awesome/css/font-awesome.min.css',
+                                 'datetimepicker/css/bootstrap-datetimepicker.min.css'));
+        echo $this->minify->deploy_css(true); 
     ?>
     
     <script type="text/javascript" src="<?php echo base_url()?>components/jquery/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>components/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>components/toastr/toastr.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>components/custom/js/scripts.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>components/moment/moment.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>components/moment/locale/pt-br.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>components/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     
 </head>
 
