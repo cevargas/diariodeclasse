@@ -3,8 +3,13 @@
         
         <form id="frm-pesquisa" action="<?php echo base_url()?>turmas/pesquisa" method="post" class="form-inline pull-left">
             <div class="form-group">
-                 <div class='input-group date' id='datetimepicker'>
-                    <input type='text' class="form-control" name="datainicial"/>
+                 <div class='input-group date datetimepicker'>
+                   
+                    <input type='text' class="form-control" 
+                        name="datainicial"
+                        placeholder="Data Inicial"
+                        value="<?php if($this->input->post('datainicial')): echo set_value('datainicial'); endif;?>"/>
+                        
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>

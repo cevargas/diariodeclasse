@@ -3,17 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pessoas extends CI_Controller {
 
-    public function __construct() {        
+    public function __construct() { 
         parent::__construct();   
-        
-        $this->load->library('form_validation');  
+        $this->load->library('form_validation');
     }
 
 	public function index() {
+        $this->session->set_flashdata('error_msg', NULL);
 		$this->listar();
 	}
     
-    public function listar() {
+    public function listar($msg=false) {
+        
+        if($msg === false)
+            $this->session->set_flashdata('error_msg', NULL);
             	
         $data = array();  
         
@@ -24,7 +27,9 @@ class Pessoas extends CI_Controller {
 		$this->load->view('app', $data);
     }
     
-    public function novo() {        
+    public function novo() {     
+        
+        $this->session->set_flashdata('error_msg', NULL);
         
         $data = array();
         
@@ -33,7 +38,9 @@ class Pessoas extends CI_Controller {
     
     }
     
-    public function editar($codigo) {        
+    public function editar($codigo) { 
+        
+        $this->session->set_flashdata('error_msg', NULL);
         
         $data = array(); 
         
@@ -133,7 +140,7 @@ class Pessoas extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             
            $this->session->set_flashdata('error_msg', 'Informe o nome da Pessoa que deseja pesquisar');
-           $this->listar(); 
+           $this->listar(true); 
             
         }
         else {

@@ -23,7 +23,7 @@
                                  'toastr/toastr.css',
                                  'font-awesome/css/font-awesome.min.css',
                                  'datetimepicker/css/bootstrap-datetimepicker.min.css'));
-        echo $this->minify->deploy_css(true); 
+        echo $this->minify->deploy_css(false); 
     ?>
     
     <script type="text/javascript" src="<?php echo base_url()?>components/jquery/jquery-1.11.3.min.js"></script>
@@ -60,7 +60,7 @@
         </div>
     </div>
     
-    <?php if($this->session->flashdata('success_msg')) : ?>
+    <?php if($this->session->flashdata('success_msg') != NULL) : ?>
         <script>
             $(function () {
                 toastr.success('<?php echo $this->session->flashdata('success_msg');?>', 'Sucesso');
@@ -68,7 +68,7 @@
         </script>   
     <?php endif; ?>
     
-     <?php if($this->session->flashdata('error_msg')) : ?>
+     <?php if($this->session->flashdata('error_msg') != NULL) : ?>
         <script>
             $(function () {
                 toastr.warning('<?php echo $this->session->flashdata('error_msg');?>', 'Opss..');

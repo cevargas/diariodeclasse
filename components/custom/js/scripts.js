@@ -13,8 +13,6 @@ $(function () {
     $('#delete').on('click', function (e) {
         var id  = $(this).attr('data-id');
         var url = $(this).attr('data-url');
-        
-        console.log(url)
 
         $.ajax({
             type: "POST",
@@ -28,10 +26,17 @@ $(function () {
                 toastr.success('Dados excluidos com sucesso!', 'Sucesso');
             }
         });
-    });    
-    $('#datetimepicker').datetimepicker({ 
+    });   
+    
+    $('.datetimepicker').datetimepicker({ 
         locale: 'pt-br',
         format: 'DD/MM/YYYY'
+    }, function(start, end, label){
+        
+      
+            alert('A date range was chosen: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        
+        
     });
    
 });
