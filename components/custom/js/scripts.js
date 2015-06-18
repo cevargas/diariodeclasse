@@ -30,13 +30,17 @@ $(function () {
     
     $('.datetimepicker').datetimepicker({ 
         locale: 'pt-br',
-        format: 'DD/MM/YYYY'
-    }, function(start, end, label){
-        
-      
-            alert('A date range was chosen: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-        
-        
+        format: 'DD/MM/YYYY'        
+    });
+    
+    //TESTA AQUI AS DATAS DO CADASTRO DAS TURMAS *****************
+    $("body").on("change", "#datainicio", function (e) {        
+        console.log('aaaa');
+        //$('#datafim').data("DateTimePicker").minDate(e.date);
+    });
+    $("#datafim").on("change.dp", function (e) {        
+        console.log('vvvv');
+        //$('#datainicio').data("DateTimePicker").maxDate(e.date);
     });
    
 });

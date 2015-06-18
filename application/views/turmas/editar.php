@@ -10,7 +10,7 @@
                 <label for="nome" class="col-sm-2 control-label">Data Inicial</label>
                 <div class="col-sm-4">
                     <div class='input-group date datetimepicker'>
-                        <input type="text" class="form-control" name="datainicio" placeholder="Data Inicial" value="<?php if(isset($turma)) : echo $turma->getDatainicio()->format('d/m/Y'); else: echo set_value('datainicio'); endif;?>">
+                        <input type="text" class="form-control" name="datainicio" id="datainicio" placeholder="Data Inicial" value="<?php if(isset($turma)) : echo $turma->getDatainicio()->format('d/m/Y'); else: echo set_value('datainicio'); endif;?>">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -22,7 +22,7 @@
                 <label for="nome" class="col-sm-2 control-label">Data Final</label>
                 <div class="col-sm-4">
                     <div class='input-group date datetimepicker'>
-                        <input type="text" class="form-control" name="datafim" placeholder="Data Final" value="<?php if(isset($turma)) : echo $turma->getDatafim()->format('d/m/Y'); else: echo set_value('datainicio'); endif;?>">
+                        <input type="text" class="form-control" name="datafim" id="datafim" placeholder="Data Final" value="<?php if(isset($turma)) : echo $turma->getDatafim()->format('d/m/Y'); else: echo set_value('datainicio'); endif;?>">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
