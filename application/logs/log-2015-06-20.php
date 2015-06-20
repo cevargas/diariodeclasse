@@ -66,3 +66,113 @@ ERROR - 2015-06-20 12:41:48 --> Severity: error --> Exception: [Syntax Error] li
 ERROR - 2015-06-20 12:42:04 --> Severity: Parsing Error --> syntax error, unexpected ''.$tipo.'' (T_CONSTANT_ENCAPSED_STRING) C:\wamp\www\diariodeclasse\application\controllers\Pessoas.php 171
 ERROR - 2015-06-20 12:44:23 --> Severity: error --> Exception: [Syntax Error] line 0, col 68: Error: Expected end of string, got 'andp' C:\wamp\www\diariodeclasse\application\libraries\doctrine\orm\lib\Doctrine\ORM\Query\QueryException.php 52
 ERROR - 2015-06-20 13:03:05 --> Severity: Parsing Error --> syntax error, unexpected ':' C:\wamp\www\diariodeclasse\application\views\turmas\editar.php 97
+ERROR - 2015-06-20 13:49:15 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 39
+ERROR - 2015-06-20 13:55:58 --> Severity: Notice --> Undefined property: Entities\Turma::$getNome C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 2
+ERROR - 2015-06-20 14:06:25 --> Severity: Error --> Call to undefined method Entities\Alunoturma::getNome() C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 33
+ERROR - 2015-06-20 14:08:16 --> Severity: Error --> Call to undefined method Entities\Alunoturma::getNome() C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 38
+ERROR - 2015-06-20 14:13:22 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 17
+ERROR - 2015-06-20 14:16:54 --> Severity: Parsing Error --> syntax error, unexpected 'if' (T_IF) C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 16
+ERROR - 2015-06-20 14:17:17 --> Severity: Parsing Error --> syntax error, unexpected 'if' (T_IF) C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 16
+ERROR - 2015-06-20 16:18:14 --> Severity: Parsing Error --> syntax error, unexpected 'rue' (T_STRING) C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 72
+ERROR - 2015-06-20 16:22:59 --> Severity: Notice --> Undefined variable: salvar C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 46
+ERROR - 2015-06-20 16:25:47 --> Severity: Parsing Error --> syntax error, unexpected end of file C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 62
+ERROR - 2015-06-20 16:31:43 --> Severity: Error --> Call to undefined method Entities\Alunoturma::getNome() C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 27
+ERROR - 2015-06-20 17:03:36 --> Severity: Notice --> Undefined variable: salvar C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 92
+ERROR - 2015-06-20 17:55:20 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 64
+ERROR - 2015-06-20 17:55:40 --> Severity: Notice --> Array to string conversion C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 66
+ERROR - 2015-06-20 17:55:40 --> Severity: Notice --> Array to string conversion C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 66
+ERROR - 2015-06-20 17:55:40 --> Severity: Notice --> Array to string conversion C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 66
+ERROR - 2015-06-20 17:55:59 --> Severity: Notice --> Array to string conversion C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 66
+ERROR - 2015-06-20 17:55:59 --> Severity: Notice --> Array to string conversion C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 66
+ERROR - 2015-06-20 17:55:59 --> Severity: Notice --> Array to string conversion C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 66
+ERROR - 2015-06-20 18:06:46 --> Severity: error --> Exception: EntityManager#remove() expects parameter 1 to be an entity object, array given. C:\wamp\www\diariodeclasse\application\libraries\doctrine\orm\lib\Doctrine\ORM\ORMInvalidArgumentException.php 169
+ERROR - 2015-06-20 18:22:02 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 77
+ERROR - 2015-06-20 18:22:16 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 77
+ERROR - 2015-06-20 18:23:43 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 78
+ERROR - 2015-06-20 18:23:49 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 78
+ERROR - 2015-06-20 18:24:13 --> Severity: Warning --> Missing argument 1 for Frequencia::chamada() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 33
+ERROR - 2015-06-20 18:24:13 --> Severity: Notice --> Undefined variable: codigoTurma C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 35
+ERROR - 2015-06-20 18:24:13 --> Severity: Notice --> Undefined variable: codigoTurma C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 41
+ERROR - 2015-06-20 18:24:13 --> Severity: Notice --> Undefined variable: codigoTurma C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 44
+ERROR - 2015-06-20 18:24:13 --> Severity: Notice --> Undefined variable: codigoTurma C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 47
+ERROR - 2015-06-20 18:24:13 --> Severity: Error --> Call to a member function getCodigoDisciplina() on a non-object C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 3
+ERROR - 2015-06-20 18:24:26 --> Severity: Error --> Call to a member function getCodigoDisciplina() on a non-object C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 3
+ERROR - 2015-06-20 18:25:19 --> Severity: error --> Exception: An exception occurred while executing 'SELECT t0.codigo AS codigo1, t0.aula AS aula2, t0.presenca AS presenca3, t0.codigo_aluno AS codigo_aluno4, t0.codigo_turma AS codigo_turma5 FROM frequencia t0 WHERE t0.codigo_turma = ?' with params [false]:
+
+SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "" C:\wamp\www\diariodeclasse\application\libraries\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractPostgreSQLDriver.php 91
+ERROR - 2015-06-20 18:25:45 --> Severity: error --> Exception: An exception occurred while executing 'SELECT t0.codigo AS codigo1, t0.aula AS aula2, t0.presenca AS presenca3, t0.codigo_aluno AS codigo_aluno4, t0.codigo_turma AS codigo_turma5 FROM frequencia t0 WHERE t0.codigo_turma = ?' with params [false]:
+
+SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "" C:\wamp\www\diariodeclasse\application\libraries\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractPostgreSQLDriver.php 91
+ERROR - 2015-06-20 18:26:52 --> Severity: error --> Exception: An exception occurred while executing 'SELECT t0.codigo AS codigo1, t0.aula AS aula2, t0.presenca AS presenca3, t0.codigo_aluno AS codigo_aluno4, t0.codigo_turma AS codigo_turma5 FROM frequencia t0 WHERE t0.codigo_turma = ?' with params [false]:
+
+SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "" C:\wamp\www\diariodeclasse\application\libraries\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractPostgreSQLDriver.php 91
+ERROR - 2015-06-20 18:27:47 --> Severity: error --> Exception: An exception occurred while executing 'SELECT t0.codigo AS codigo1, t0.aula AS aula2, t0.presenca AS presenca3, t0.codigo_aluno AS codigo_aluno4, t0.codigo_turma AS codigo_turma5 FROM frequencia t0 WHERE t0.codigo_turma = ?' with params [false]:
+
+SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "" C:\wamp\www\diariodeclasse\application\libraries\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractPostgreSQLDriver.php 91
+ERROR - 2015-06-20 18:29:12 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 78
+ERROR - 2015-06-20 18:30:17 --> Severity: Parsing Error --> syntax error, unexpected '}' C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 102
+ERROR - 2015-06-20 18:33:28 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 79
+ERROR - 2015-06-20 18:34:32 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 79
+ERROR - 2015-06-20 18:35:25 --> Severity: error --> Exception: An exception occurred while executing 'SELECT t0.codigo AS codigo1, t0.aula AS aula2, t0.presenca AS presenca3, t0.codigo_aluno AS codigo_aluno4, t0.codigo_turma AS codigo_turma5 FROM frequencia t0 WHERE t0.codigo_turma = ?' with params ["tetetet"]:
+
+SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "tetetet" C:\wamp\www\diariodeclasse\application\libraries\doctrine\dbal\lib\Doctrine\DBAL\Driver\AbstractPostgreSQLDriver.php 91
+ERROR - 2015-06-20 18:40:27 --> Severity: Error --> Call to a member function getCodigoDisciplina() on a non-object C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 3
+ERROR - 2015-06-20 18:43:28 --> Severity: Error --> Call to a member function getCodigoDisciplina() on a non-object C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 3
+ERROR - 2015-06-20 18:43:49 --> Severity: Error --> Call to a member function getCodigoDisciplina() on a non-object C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 3
+ERROR - 2015-06-20 18:44:12 --> Severity: Error --> Call to a member function getCodigoDisciplina() on a non-object C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 3
+ERROR - 2015-06-20 18:45:11 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 92
+ERROR - 2015-06-20 18:47:11 --> Severity: Error --> Call to a member function getCodigoDisciplina() on a non-object C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 3
+ERROR - 2015-06-20 18:47:32 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 93
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined property: Entities\Frequencia::$getPresenca C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 57
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined property: Entities\Frequencia::$getPresenca C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 57
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:04:39 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:05:02 --> Severity: Notice --> Undefined variable: checkp C:\wamp\www\diariodeclasse\application\views\frequencia\chamada.php 66
+ERROR - 2015-06-20 19:14:25 --> Severity: Error --> Call to undefined method Entities\Turma::getNome() C:\wamp\www\diariodeclasse\application\views\frequencia\index.php 10
+ERROR - 2015-06-20 19:19:08 --> Severity: Notice --> Undefined variable: turmas C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 137
+ERROR - 2015-06-20 19:19:08 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\views\frequencia\index.php 9
+ERROR - 2015-06-20 19:19:08 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\views\frequencia\index.php 37
+ERROR - 2015-06-20 19:19:30 --> Severity: Notice --> Undefined variable: turmas C:\wamp\www\diariodeclasse\application\controllers\Frequencia.php 137
+ERROR - 2015-06-20 19:19:30 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\views\frequencia\index.php 9
+ERROR - 2015-06-20 19:19:30 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\views\frequencia\index.php 37
+ERROR - 2015-06-20 19:22:31 --> Severity: Notice --> Undefined variable: turmas_pesq C:\wamp\www\diariodeclasse\application\views\frequencia\index.php 9
+ERROR - 2015-06-20 19:22:31 --> Severity: Warning --> Invalid argument supplied for foreach() C:\wamp\www\diariodeclasse\application\views\frequencia\index.php 9
