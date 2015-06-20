@@ -46,7 +46,7 @@ class Disciplinas extends CI_Controller {
         $data = array(); 
         
         $disciplina = $this->doctrine->em->getRepository('Entities\Disciplina')->findOneBy(array('codigo' => $codigo));
-        
+
         $data['disciplina'] = $disciplina;
         $data['view'] = 'disciplinas/editar';
         
@@ -55,7 +55,7 @@ class Disciplinas extends CI_Controller {
     }
     
     public function salvar() {    
- 
+        
         $this->form_validation->set_rules('nome', 'Nome', 'required');
         $this->form_validation->set_message('required', 'Disciplina é um campo obrigatório.');
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger" role="alert">', '</div>');
@@ -70,7 +70,7 @@ class Disciplinas extends CI_Controller {
         
             $codigo = $this->input->post('codigo');
             $nome = $this->input->post('nome');
-            
+
             $message = '';
 
             if($codigo) {

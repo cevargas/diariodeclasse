@@ -9,8 +9,26 @@
                     value="<?php if($this->input->post('nome')): 
                                     echo $this->input->post('nome'); 
                                   endif;?>"
-                     placeholder="Pessoa">
-            </div>           
+                     placeholder="Nome">
+            </div>
+            
+            <div class="form-group">
+                <select name="tipopessoa" class="form-control input-sm">       
+                    <option value="">Selecione</option>
+                    
+                    <?php
+                        $prof = '';
+                        $alun = '';
+                        if($this->input->post('tipopessoa')):
+                            $prof = ($this->input->post('tipopessoa') == 1) ? 'selected' : '';
+                            $alun = ($this->input->post('tipopessoa') == 2) ? 'selected' : '';
+                        endif;
+                    ?>
+                    <option value="1" <?php echo $prof;?>>Professor</option>
+                    <option value="2" <?php echo $alun;?>>Aluno</option>
+                </select>  
+            </div>  
+                         
             <button type="submit" class="btn btn-sm btn-warning"><i class="fa fa-search"></i> Pesquisar</button>
         </form>        
         
@@ -29,7 +47,7 @@
 
     <thead>
         <tr>
-            <th>#</th>
+            <th>Código</th>
             <th>Nome</th>
             <th>Email</th>
             <th>Tipo</th>
@@ -67,6 +85,17 @@
             </td>
         </tr>
         <?php endforeach; ?>
+        <?php
+            if(count($lista_pessoas) <= 0):
+        ?>
+            <tr>
+                <td colspan="6" class="col-md-12">
+                    Nenhuma informação encontrada. 
+                </td>
+            </tr>            
+        <?php
+            endif;
+        ?>        
     </tbody>
 </table>
 

@@ -44,7 +44,7 @@
             <nav class="navbar navbar-default navbar-static-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Diário de Classe</a>
+                        <a class="navbar-brand" href="<?php echo base_url()?>">Diário de Classe</a>
                     </div>
                 </div>
             </nav>

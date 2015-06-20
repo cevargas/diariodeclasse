@@ -21,7 +21,7 @@ class Turmas extends CI_Controller {
             	
         $data = array(); 
         
-        $turmas = $this->doctrine->em->getRepository('Entities\Turma')->findBy(array(), ['datainicio' => 'ASC']);
+        $turmas = $this->doctrine->em->getRepository('Entities\Turma')->findBy(array(), ['codigo' => 'DESC']);
         $data['lista_turmas'] = $turmas;
         $data['view'] = 'turmas/index';
 
@@ -32,8 +32,9 @@ class Turmas extends CI_Controller {
         
         $this->session->set_flashdata('error_msg', NULL);
         
-        $data = array();        
-         
+        $data = array();
+        
+        $data['alunos'] = $this->doctrine->em->getRepository('Entities\Pessoa')->findBy(array('tipo' => 2), ['nome' => 'ASC']);
         $data['pessoas'] = $this->doctrine->em->getRepository('Entities\Pessoa')->findBy(array('tipo'=>1), ['nome' => 'ASC']);
         $data['disciplinas'] = $this->doctrine->em->getRepository('Entities\Disciplina')->findBy(array(), ['nome' => 'ASC']);
         
@@ -48,12 +49,12 @@ class Turmas extends CI_Controller {
         
         $data = array(); 
         
-        $turma = $this->doctrine->em->getRepository('Entities\Turma')->findOneBy(array('codigo' => $codigo));
-        
+        $data['alunoturma'] = $this->doctrine->em->getRepository('Entities\Alunoturma')->findBy(array('codigoTurma' => $codigo));   
+        $data['turma'] = $this->doctrine->em->getRepository('Entities\Turma')->findOneBy(array('codigo' => $codigo));
+        $data['alunos'] = $this->doctrine->em->getRepository('Entities\Pessoa')->findBy(array('tipo' => 2), ['nome' => 'ASC']);
         $data['pessoas'] = $this->doctrine->em->getRepository('Entities\Pessoa')->findBy(array('tipo'=>1), ['nome' => 'ASC']);
         $data['disciplinas'] = $this->doctrine->em->getRepository('Entities\Disciplina')->findBy(array(), ['nome' => 'ASC']);
-        
-        $data['turma'] = $turma;
+
         $data['view'] = 'turmas/editar';
         
 		$this->load->view('app', $data);
@@ -79,8 +80,9 @@ class Turmas extends CI_Controller {
             
         }
         else {
-        
+
             $codigo = $this->input->post('codigo');
+
             $datainicio = $this->input->post('datainicio');
             $datafim = $this->input->post('datafim');
             
@@ -94,47 +96,112 @@ class Turmas extends CI_Controller {
             $codigodisciplina = $this->input->post('codigodisciplina');
             $codigoprofessor = $this->input->post('codigoprofessor');
             
-            $professor = $this->doctrine->em->getRepository('Entities\Pessoa')->findOneBy(array('codigo' => $codigoprofessor));
-            $disciplina = $this->doctrine->em->getRepository('Entities\Disciplina')->findOneBy(array('codigo' => $codigodisciplina));
-
+            $professor = $this->doctrine->em->getRepository('Entities\Pessoa')
+                                        ->findOneBy(array('codigo' => $codigoprofessor, 'tipo' => 1));
+            
+            $disciplina = $this->doctrine->em->getRepository('Entities\Disciplina')
+                                            ->findOneBy(array('codigo' => $codigodisciplina));
+        
             $message = '';
 
-            if($codigo) {
+            if($professor and $disciplina):
+            
+                if($codigo) :
+                    //insert
+                    $turma = $this->doctrine->em->getRepository('Entities\Turma')
+                                            ->findOneBy(array('codigo' => $codigo));
+            
+                    if($turma):
+                        $message = 'Dados atualizados com sucesso.';
+            
+                    else: 
+                        $this->session->set_flashdata('error_msg', 'Dados inválidos!');
+                        $this->listar(true);
+            
+                    endif;
+            
+                else:            
+                    //update
+                    $turma = new Entities\Turma;                
+                    $message = 'Dados incluídos com sucesso.';
+
+                endif;
+                        
+                $turma->setDatainicio($datein);
+                $turma->setDatafim($dateoff);
+                $turma->setQuantidadeaulas($quantidadeaulas);
+                $turma->setCodigoDisciplina($disciplina);
+                $turma->setCodigoProfessor($professor);
                 
-                $turma = $this->doctrine->em->getRepository('Entities\Turma')->findOneBy(array('codigo' => $codigo));
-                $message = 'Dados atualizados com sucesso.';
+                //salva nova turma
+                $this->doctrine->em->persist($turma);
+            
+                //deleta da alunoturma       
+                $getAlunosTurma = $this->doctrine->em->getRepository('Entities\Alunoturma')
+                                            ->findBy(array('codigoTurma' => $turma->getCodigo()));
+
+                if(count($getAlunosTurma) > 0):
+                    foreach($getAlunosTurma as $alTurm):
+                        $this->doctrine->em->remove($alTurm);
+                    endforeach;
+                endif;
+                                                     
+                //lista de alunos
+                $alunos = $this->input->post('alunos');
+            
+                if($alunos):
+
+                    foreach($alunos as $aluno):  
+            
+                        $alunosTurma = new Entities\Alunoturma;
+
+                        $getAluno = $this->doctrine->em->getRepository('Entities\Pessoa')
+                                            ->findOneBy(array('codigo' => $aluno, 'tipo' => 2));
+
+                        $alunosTurma->setCodigoAluno($getAluno);
+                        $alunosTurma->setCodigoTurma($turma);
+                        
+                        //salva alunos da turma
+                        $this->doctrine->em->persist($alunosTurma);
+                        
+                    endforeach;
+
+                endif;
                 
-            }
-            else {
+                $this->doctrine->em->flush();
+                $this->session->set_flashdata('success_msg', $message);
+
+                redirect('turmas');           
+                          
+            else:
+                $this->session->set_flashdata('error_msg', 'Dados inválidos!');
+                $this->listar(true);
                 
-                $turma = new Entities\Turma;                
-                $message = 'Dados incluídos com sucesso.';
-            }
+            endif;
             
-            $turma->setDatainicio($datein);
-            $turma->setDatafim($dateoff);
-            $turma->setQuantidadeaulas($quantidadeaulas);
-            $turma->setCodigoDisciplina($disciplina);
-            $turma->setCodigoProfessor($professor);
-            
-            $this->doctrine->em->persist($turma);
-            $this->doctrine->em->flush();
-            
-            $this->session->set_flashdata('success_msg', $message);
-            
-            redirect('turmas');
         }	
     }
     
     public function excluir() {
         
-        $codigo = $this->input->post('codigo');
-   
         $data = array();
         
+        $codigo = $this->input->post('codigo');
         $turma = $this->doctrine->em->getRepository('Entities\Turma')->findOneBy(array('codigo' => $codigo));
 
+        //deleta da alunoturma       
+        $getAlunosTurma = $this->doctrine->em->getRepository('Entities\Alunoturma')
+                                    ->findBy(array('codigoTurma' => $turma->getCodigo()));
+
+        if(count($getAlunosTurma) > 0):
+            foreach($getAlunosTurma as $alTurm):
+                $this->doctrine->em->remove($alTurm);
+            endforeach;
+        endif;
+
+        //deleta turma
         $this->doctrine->em->remove($turma);
+        
         $this->doctrine->em->flush();
         
         $data['return'] = 'success';
@@ -146,7 +213,7 @@ class Turmas extends CI_Controller {
         
         $data = array();
         
-        $this->form_validation->set_rules('datainicial', 'Data Inicial', 'required');
+        $this->form_validation->set_rules('datainicialpesq', 'Data Inicial', 'required');
          
         if ($this->form_validation->run() == FALSE) {
             
@@ -158,7 +225,7 @@ class Turmas extends CI_Controller {
 
             $this->session->set_flashdata('error_msg', NULL);
             
-            $turma_pesquisa = $this->input->post('datainicial');
+            $turma_pesquisa = $this->input->post('datainicialpesq');
 
             $date = DateTime::createFromFormat('d/m/Y', $turma_pesquisa);
             $date->setTime(0, 0);

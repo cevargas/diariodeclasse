@@ -55,11 +55,11 @@ class Pessoas extends CI_Controller {
     
     public function salvar() {    
  
-        $this->form_validation->set_rules('nome', 'Nome', 'required');
-        $this->form_validation->set_rules('endereco', 'Endereço', 'required');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-        $this->form_validation->set_rules('senha', 'Senha', 'required|min_length[3]');
-        $this->form_validation->set_rules('tipo', 'Tipo', 'required');
+        $this->form_validation->set_rules('nome', 'Nome', 'required|trim');
+        $this->form_validation->set_rules('endereco', 'Endereço', 'required|trim');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+        $this->form_validation->set_rules('senha', 'Senha', 'required|trim|min_length[3]');
+        $this->form_validation->set_rules('tipo', 'Tipo', 'required|trim');
         
         $this->form_validation->set_message('required', '%s é um campo obrigatório.');
         $this->form_validation->set_message('valid_email', 'Informe um email válido.');
@@ -117,13 +117,22 @@ class Pessoas extends CI_Controller {
     
     public function excluir() {
         
-        $codigo = $this->input->post('codigo');
-        
         $data = array();
         
-        $disciplina = $this->doctrine->em->getRepository('Entities\Pessoa')->findOneBy(array('codigo' => $codigo));
+        $codigo = $this->input->post('codigo');
+        $pessoa = $this->doctrine->em->getRepository('Entities\Pessoa')->findOneBy(array('codigo' => $codigo));
+        
+        //deleta da alunoturma       
+        $getAlunosTurma = $this->doctrine->em->getRepository('Entities\Alunoturma')
+                                    ->findBy(array('codigoAluno' => $pessoa->getCodigo()));
 
-        $this->doctrine->em->remove($disciplina);
+        if(count($getAlunosTurma) > 0):
+            foreach($getAlunosTurma as $alTurm):
+                $this->doctrine->em->remove($alTurm);
+            endforeach;
+        endif;
+
+        $this->doctrine->em->remove($pessoa);
         $this->doctrine->em->flush();
         
         $data['return'] = 'success';
@@ -135,25 +144,35 @@ class Pessoas extends CI_Controller {
         
         $data = array();
         
-        $this->form_validation->set_rules('nome', 'Nome', 'required');
+        $pessoa_pesquisa = $this->input->post('nome');
+        $tipo = (string)$this->input->post('tipopessoa');
+        
+        if(strlen($pessoa_pesquisa) > 0)
+        {
+            $this->form_validation->set_rules('nome', 'Nome', 'required|trim');
+        }
+        
+        if(strlen($tipo) > 0)
+        {
+            $this->form_validation->set_rules('tipopessoa', 'Tipo', 'required|trim');
+        }
          
         if ($this->form_validation->run() == FALSE) {
             
-           $this->session->set_flashdata('error_msg', 'Informe o nome da Pessoa que deseja pesquisar');
+           $this->session->set_flashdata('error_msg', 'Informe o Nome ou o Tipo de Pessoa que deseja pesquisar');
            $this->listar(true); 
             
         }
         else {
             
             $this->session->set_flashdata('error_msg', NULL);
+             
+            $find = ($pessoa_pesquisa) ? "where LOWER(p.nome) LIKE '%".$pessoa_pesquisa."%' " : NULL;
+            $find .= ($tipo) ? (($pessoa_pesquisa) ? "and " : "where ") . "p.tipo = '".$tipo."' " : NULL;        
             
-            $pessoa_pesquisa = $this->input->post('nome');
-            $pessoas = $this->doctrine->em->getRepository('Entities\Pessoa')
-                ->createQueryBuilder('d')
-                ->where('LOWER(d.nome) LIKE :nome')
-                ->setParameter('nome', '%'.strtolower($pessoa_pesquisa).'%')
-                ->getQuery()
-                ->getResult();
+            $q = $this->doctrine->em->createQuery("select p from Entities\Pessoa p ".$find." ");
+
+            $pessoas = $q->getResult();           
  
             $data['lista_pessoas'] = $pessoas;
             $data['view'] = 'pessoas/index';

@@ -12,7 +12,7 @@
                     <input type="text" class="form-control" name="nome" placeholder="Nome da Disciplina" value="<?php if(isset($disciplina)) : echo $disciplina->getNome(); else: echo set_value('nome'); endif;?>">
                 </div>
             </div>
-
+            
             <input type="hidden" name="codigo" value="<?php if(isset($disciplina)) : echo $disciplina->getCodigo(); else: echo set_value('codigo'); endif; ?>">
 
             <div class="form-group">

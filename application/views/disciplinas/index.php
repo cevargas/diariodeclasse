@@ -29,7 +29,7 @@
 
     <thead>
         <tr>
-            <th>#</th>
+            <th>Código</th>
             <th>Disciplina</th>
             <th colspan="2"></th>
         </tr>
@@ -57,6 +57,18 @@
             </td>
         </tr>
         <?php endforeach; ?>
+        
+        <?php
+            if(count($lista_disciplinas) <= 0):
+        ?>
+            <tr>
+                <td colspan="4" class="col-md-12">
+                    Nenhuma informação encontrada. 
+                </td>
+            </tr>            
+        <?php
+            endif;
+        ?>        
     </tbody>
 </table>
 

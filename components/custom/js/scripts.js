@@ -28,19 +28,27 @@ $(function () {
         });
     });   
     
-    $('.datetimepicker').datetimepicker({ 
+    $('#datepesquturma').datetimepicker({ 
         locale: 'pt-br',
         format: 'DD/MM/YYYY'        
     });
     
-    //TESTA AQUI AS DATAS DO CADASTRO DAS TURMAS *****************
-    $("body").on("change", "#datainicio", function (e) {        
-        console.log('aaaa');
-        //$('#datafim').data("DateTimePicker").minDate(e.date);
+    $('#datetimestart').datetimepicker({ 
+        locale: 'pt-br',
+        format: 'DD/MM/YYYY'
     });
-    $("#datafim").on("change.dp", function (e) {        
-        console.log('vvvv');
-        //$('#datainicio').data("DateTimePicker").maxDate(e.date);
+    
+    $('#datetimeend').datetimepicker({ 
+        locale: 'pt-br',
+        format: 'DD/MM/YYYY'        
+    });
+    
+    $("#datetimestart").on("dp.change", function (e) {
+        $('#datetimeend').data("DateTimePicker").minDate(e.date);
+    });
+    
+    $("#datetimeend").on("dp.change", function (e) {        
+        $('#datetimestart').data("DateTimePicker").maxDate(e.date);
     });
    
 });

@@ -3,12 +3,13 @@
         
         <form id="frm-pesquisa" action="<?php echo base_url()?>turmas/pesquisa" method="post" class="form-inline pull-left">
             <div class="form-group">
-                 <div class='input-group date datetimepicker'>
+                 <div id="datepesquturma" class='input-group date'>
                    
                     <input type='text' class="form-control" 
-                        name="datainicial"
+                        name="datainicialpesq"
+                        id="datainicialpesq"
                         placeholder="Data Inicial"
-                        value="<?php if($this->input->post('datainicial')): echo set_value('datainicial'); endif;?>"/>
+                        value="<?php if($this->input->post('datainicialpesq')): echo set_value('datainicialpesq'); endif;?>"/>
                         
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
@@ -33,8 +34,9 @@
 
     <thead>
         <tr>
-            <th>#</th>
-            <th>Data Inicio</th>
+            <th>Código</th>
+            <th>Data Inicial</th>
+            <th>Data Final</th>
             <th>Aulas</th>
             <th>Disciplina</th>
             <th>Professor</th>
@@ -48,13 +50,20 @@
             <td class="col-md-1">
                 <?php echo $val->getCodigo();?>
             </td>                
-            <td class="col-md-2">                 
+            <td class="col-md-1">                 
                  <?php 
                     if($val->getDatainicio()):
                         echo $val->getDatainicio()->format('d/m/Y');
                     endif;
                 ?>    
-            </td>    
+            </td>   
+            <td class="col-md-1">                 
+                 <?php 
+                    if($val->getDatafim()):
+                        echo $val->getDatafim()->format('d/m/Y');
+                    endif;
+                ?>    
+            </td>
             <td class="col-md-1">
                  <?php echo $val->getQuantidadeaulas();?>
             </td>                
@@ -79,6 +88,18 @@
             </td>
         </tr>
         <?php endforeach; ?>
+        
+        <?php
+            if(count($lista_turmas) <= 0):
+        ?>
+            <tr>
+                <td colspan="12" class="col-md-12">
+                    Nenhuma informação encontrada. 
+                </td>
+            </tr>            
+        <?php
+            endif;
+        ?>        
     </tbody>
 </table>
 

@@ -56,9 +56,8 @@ class Doctrine {
 
     $config->setAutoGenerateProxyClasses( TRUE );
 	
-	if (strpos($db['default']['dbdriver'], 'pdo') === false) {
+	if (strpos($db['default']['dbdriver'], 'pdo') === false) 
 		$pdo = 'pdo_';
-	}
 
 	if($db['default']['dbdriver'] == 'mysqli') 
 		$pdo = '';   
